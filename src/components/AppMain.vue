@@ -28,12 +28,12 @@ export default {
     <div class="container">
         <div class="row">
             <div class="col mt-3">
-                <div class="btn-group dropend">
-                    <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                       Alien
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Alien
                     </button>
                     <ul class="dropdown-menu">
-                        
+                        <li><a class="dropdown-item" href="#">archetype</a></li>
                     </ul>
                 </div>
 
