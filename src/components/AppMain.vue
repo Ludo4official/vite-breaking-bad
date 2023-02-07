@@ -14,6 +14,10 @@ export default {
         charactersCount: {
             type: Number,
             default: 0
+        },
+        archetypes: {
+            type: Array,
+            default: []
         }
     }
     
@@ -28,18 +32,14 @@ export default {
     <div class="container">
         <div class="row">
             <div class="col mt-3">
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Alien
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">archetype</a></li>
-                    </ul>
-                </div>
+
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Scegli un tipo...</option>
+                    <option value="" v-for="archetype in archetypes">{{ archetype.archetype_name }}</option>
+                </select>
 
             </div>
-       
-         </div>
+       </div>
     </div>
 
     <div class="container bg-light mt-3 rounded">

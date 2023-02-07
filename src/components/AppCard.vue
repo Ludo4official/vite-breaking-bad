@@ -4,7 +4,8 @@ export default {
     
     name: 'AppCard',
     props: {
-        character: Object
+        character: Object,
+        archetype: Object
     }
    
 }

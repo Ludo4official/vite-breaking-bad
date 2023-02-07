@@ -16,7 +16,8 @@ export default {
         },
         data() {
           return {
-            characters: []
+            characters: [],
+            archetype: []
           }
         },
         created() {
@@ -24,7 +25,13 @@ export default {
             .get('https://db.ygoprodeck.com/api/v7/cardinfo.php')
             .then((response) => {
                 this.characters = response.data.data
-                console.log(response.data.data.slice(0,20))
+                console.log(response.data.data.slice(0,10))
+        })
+          axios
+            .get('https://db.ygoprodeck.com/api/v7/archetypes.php')
+            .then((response) => {
+              this.archetype = response.data
+              console.log(response.data.slice(0,10))
         });
 
     }
@@ -35,7 +42,7 @@ export default {
 <template>
   
     <AppHeader></AppHeader>
-    <AppMain :charactersList="characters" :charactersCount="characters.length"></AppMain>
+    <AppMain :charactersList="characters" :charactersCount="characters.length" :archetypes="archetype"></AppMain>
     <AppFooter></AppFooter>
   
 </template>
