@@ -24,7 +24,7 @@ export default {
           axios
             .get('https://db.ygoprodeck.com/api/v7/cardinfo.php')
             .then((response) => {
-                this.characters = response.data.data
+                this.characters = response.data.data.slice(0,10)
                 console.log(response.data.data.slice(0,10))
         })
           axios
